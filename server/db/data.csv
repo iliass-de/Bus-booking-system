@@ -1,11 +1,11 @@
-tripId, daparture, arrival, startDate, duration, price
-001, Mannheim, Frankfurt, 2020-10-18T16:00:00Z, 60, 5
-002, Mannheim, Frankfurt, 2020-10-19T16:00:00Z, 60, 4.99
-003, Mannheim, Frankfurt, 2020-11-18T16:00:00Z, 60, 3.99
-004, Mannheim, Hamburg, 2020-10-20T16:00:00Z, 200,  10
-005, Mannheim, Hamburg, 2020-10-21T16:00:00Z, 200, 14.99
-006, Mannheim, Hamburg, 2020-10-22T16:00:00Z, 200, 15
-007, Mannheim, Berlin, 2020-10-20T16:00:00Z, 500, 35
-008, Mannheim, Berlin, 2020-10-20T16:00:00Z, 60, 40
-009, Mannheim, Berlin, 2020-10-19T16:00:00Z, 60, 36
+tripId, daparture, arrival, startTime, endTime, price
+001, Mannheim, Frankfurt, ISODate("2020-10-01T15:00:00Z"), ISODate("2020-10-01T16:00:00Z"), 5
+002, Mannheim, Frankfurt, ISODate("2020-10-01T15:00:00Z"), ISODate("2020-10-01T16:00:00Z"), 4.99
+003, Mannheim, Frankfurt, ISODate("2020-10-02T15:00:00Z"), ISODate("2020-10-02T16:00:00Z"), 3.99
+004, Mannheim, Hamburg, ISODate("2020-10-01T08:00:00Z"), ISODate("2020-10-01T15:00:00Z"),  50
+005, Mannheim, Hamburg, ISODate("2020-10-01T15:00:00Z"), ISODate("2020-10-01T22:00:00Z"), 45.99
+006, Mannheim, Hamburg, ISODate("2020-10-03T15:00:00Z"), ISODate("2020-10-03T23:00:00Z"), 44.99
+007, Mannheim, Berlin, ISODate("2020-10-01T15:00:00Z"), ISODate("2020-10-01T16:00:00Z"), 35
+008, Mannheim, Berlin, ISODate("2020-10-01T15:00:00Z"), ISODate("2020-10-01T16:00:00Z"), 40
+009, Mannheim, Berlin, ISODate("2020-10-01T15:00:00Z"), ISODate("2020-10-01T16:00:00Z"), 36
 
