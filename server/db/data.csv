@@ -1,4 +1,4 @@
-TripId, daparture, arrival, startDate, duration, price
+tripId, daparture, arrival, startDate, duration, price
 001, Mannheim, Frankfurt, 2020-10-18T16:00:00Z, 60, 5
 002, Mannheim, Frankfurt, 2020-10-19T16:00:00Z, 60, 4.99
 003, Mannheim, Frankfurt, 2020-11-18T16:00:00Z, 60, 3.99
