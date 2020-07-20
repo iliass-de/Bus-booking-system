@@ -1,4 +1,4 @@
-tripId, daparture, arrival, startTime, endTime, price
+tripId, departure, arrival, startTime, endTime, price
 001, Mannheim, Frankfurt, 2020-10-01T08:00:00+01:00, 2020-10-01T09:00:00+01:00, 5
 002, Mannheim, Frankfurt, 2020-10-01T010:00:00+01:00, 2020-10-01T11:00:00+01:00, 4.99
 003, Mannheim, Frankfurt, 2020-10-01T15:00:00+01:00, 2020-10-01T16:00:00+01:00, 3.99
