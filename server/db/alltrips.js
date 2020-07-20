@@ -36,17 +36,10 @@ module.exports = {
                     { startTime: {
                             $gte: date,
                             $lt:  dateString
-                        }
+                      }
                     }
                 ]
             }).toArray();
         });
     },
 };
-
-/*
-{ startTime: {
-                        $gte: '2020-10-01 00:00:00',
-                        $lt:  '2020-10-02 00:00:00'
-                      }
-                    } */
