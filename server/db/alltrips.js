@@ -13,16 +13,11 @@ module.exports = {
     },
     // get custom trips
     getFromToTrip: function(from, to, date) {
-        let dateString = date;
-        let newDate = new Date(dateString);
-        //add a day to the date
-        newDate.setDate(newDate.getDate() + 1);
-        let y = newDate.getFullYear(),
-            m = newDate.getMonth() + 1, // january is month 0 in javascript
-            d = newDate.getDate();
-        newDate = function(val) { var str = val.toString(); return (str.length < 2) ? "0" + str : str};
-        dateString = [y, newDate(m), newDate(d)].join("-");
-
+        let newDate = date.split('');
+        // increment days with one
+        newDate[9] = parseInt(newDate[9]) +1
+        //convert newDate to string
+        let stringDate = newDate.join('');
         return client.connect().then((client)=>{
             let db = client.db('data')
             return db.collection('trip').find({
@@ -35,7 +30,7 @@ module.exports = {
                     },
                     { startTime: {
                             $gte: date,
-                            $lt:  dateString
+                            $lt:  stringDate
                       }
                     }
                 ]
