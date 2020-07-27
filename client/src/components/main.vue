@@ -1,24 +1,26 @@
 <template>
   <div class="">
     <h1>Trips</h1>
-    <ul>
-      <li v-for="trip in trips" :key="trip">
-        {{ trip.departure }}
-        {{ trip.arrival }}
-        {{ trip.price }}
 
-      </li>
-    </ul>
+    <table class="trips-table ">
+      <thead>
+      <tr>
+        <th>Departue</th>
+        <th>Arrival</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr  v-for="trip in  this.$store.state.trips" :key="trip">
+        <td> <b>{{ trip.departure }} </b> </td>
+        <td> <b> {{ trip.arrival }}</b>  </td>
+        <td> <b> {{ trip.price }} € </b></td>
+        <td> <button type="button" class="btn btn-dark">Rserve 1 Seat</button></td>
+      </tr>
 
-    <div class="card">
-
-
-
-    </div>
-
-
-
-    <button v-on:click="fetch_data('Mannheim','Berlin','2020-10-01')">show-data</button>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -26,27 +28,6 @@
 //http://localhost:3000/trips/departue/Mannheim/destination/Berlin/2020-10-01
 export default {
   name: 'main',
-  components: {
-
-  },
-  data: function() {
-      return {
-          trips: '{}'
-      };
-  },
-  methods: {
-      fetch_data: function (departure, destination, date) {
-          const API_URL = 'http://localhost:3000/trips/departue/' + departure + '/destination/' + destination + '/' + date;
-          this.$axios.get(API_URL).then((response) => {
-              this.trips = response.data;
-              console.log(response.data[0].arrival);
-              console.log(API_URL);
-          }).catch(error => {
-              console.log(error);
-          });
-      }
-
-  }
 }
 </script>
 
@@ -65,5 +46,20 @@ li {
 }
 a {
   color: #42b983;
+}
+.trips-table{
+  text-align: center;
+  border-collapse: collapse;
+  width: 80%;
+}
+.trips-table th, td{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.trips-table td {
+  height: 100px;
+  left: 0;
+  bottom: 0;
 }
 </style>

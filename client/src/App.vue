@@ -1,19 +1,27 @@
 <template>
   <div id="app">
+    <navbar />
+    <headerarea/>
     <home />
-    <foot/>
+    <foot />
   </div>
 </template>
 
 <script>
-import home from '@/components/main.vue'
-import foot from '@/components/footer.vue'
+import navbar from './components/navbar.vue'
+import headerarea from './components/header.vue'
+import home from './components/main.vue'
+import foot from './components/footer.vue'
+
 
 export default {
   name: 'App',
   components: {
+    navbar,
+    headerarea,
     home,
-    foot
+    foot,
+
   }
 }
 </script>
@@ -26,5 +34,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body{
+  height: 1000px;
 }
 </style>
