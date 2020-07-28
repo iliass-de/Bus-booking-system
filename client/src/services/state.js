@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         trips: null,
-        traveller:null
+        traveller:null,
+        booking:null
     },
     getters: {
         get_departure: state => state.departure
@@ -17,6 +18,9 @@ export const store = new Vuex.Store({
         },
         set_traveller(state, data) {
             state.traveller = data
+        },
+        set_booking(state, data) {
+            state.booking = data
         }
         // other mutations
     }

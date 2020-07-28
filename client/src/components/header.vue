@@ -1,6 +1,6 @@
 <template>
     <div class="headerarea">
-        <p>Muster Company</p>
+        <p>Muster bus company</p>
         <div class="bookingsection">
             <div class="container">
                 <div class="row">
@@ -44,8 +44,6 @@
                 this.$axios.get(API_URL).then((response) => {
                     this.$store.commit('set_data', response.data)
                     this.$store.commit('set_traveller', traveller)
-                    console.log(this.$store.state.trips);
-                    console.log(this.$store.state.traveller);
                     console.log(API_URL);
                 }).catch(error => {
                     console.log(error);
@@ -72,7 +70,7 @@
     text-align:center;
 }
 .headerarea p {
-    color:whitesmoke;
+    color:white;
     font-size: 50px;
     text-align: center;
     text-shadow: 5px 10px 8px black;
