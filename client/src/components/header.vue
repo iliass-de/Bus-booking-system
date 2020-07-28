@@ -10,8 +10,8 @@
                     <div class="col colhead">Traveller</div>
                     <div class="col colhead"></div>
                     <div class="w-100"></div>
-                    <div class="col"><input v-model="departure" type="text"  class="form-control" placeholder="Departue"/></div>
-                    <div class="col"><input v-model="arrival" type="text"  class="form-control" placeholder="Destination"/></div>
+                    <div class="col"><input v-model="departure" type="text"  class="form-control" placeholder="Departue"  @keyup='capitalize' /></div>
+                    <div class="col"><input v-model="arrival" type="text"  class="form-control" placeholder="Destination" @keyup='capitalize'/></div>
                     <div class="col"><input v-model="date" type="date" id="1" name="1" class="form-control"></div>
                     <div class="col"><input v-model="traveller" type="number" value="0" min="0" max="50" step="1" class="form-control spinner"/></div>
                     <div class="col"><input v-on:click="set_data(departure,arrival,date,traveller)" type="button" value="Search" class="btn btn-primary" ></div>
@@ -50,6 +50,10 @@
                 }).catch(error => {
                     console.log(error);
                 });
+            },
+            capitalize() {
+                    this.departure = this.departure.toString().charAt(0).toUpperCase() + this.departure.slice(1);
+                    this.arrival = this.arrival.toString().charAt(0).toUpperCase() + this.arrival.slice(1)
             }
         }
     }
