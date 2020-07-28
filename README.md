@@ -26,3 +26,9 @@ Build a user interface application to consume the API
 * Axios
 ### Setup
 [Build Setup](https://github.com/iliassh1/Bus-booking-system/blob/master/client/README.md)
+
+### Screenshots
+* Home page  
+![alt text](https://github.com/iliassh1/Bus-booking-system/client/public/img/Screenshot1.png)  
+* Booking page  
+![alt text](https://github.com/iliassh1/Bus-booking-system/client/public/img/Screenshot2.png)  
