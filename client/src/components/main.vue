@@ -28,7 +28,9 @@
                 arrival:trip.arrival,
                 trip_date:getDate(trips[0].startTime),
                 trip_startTime:showTime(trip.startTime),
-                trip_endTime:showTime(trip.endTime)
+                trip_endTime:showTime(trip.endTime),
+                trip_price: trip.price* trip.freePlace,
+                trips_freeplace: trip.freePlace
               })">
                 Reserve {{trip.freePlace}} Seat
               </button>

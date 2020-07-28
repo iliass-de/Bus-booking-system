@@ -2,6 +2,7 @@
     <div >
         <p class="booking_titel"> Your booking from {{this.$store.state.booking.data.departure}} to {{this.$store.state.booking.data.arrival}}</p>
         <p class="booking_underTitel">{{this.$store.state.booking.data.trip_date}}, {{this.$store.state.booking.data.trip_startTime}} - {{this.$store.state.booking.data.trip_endTime}} </p>
+        <p class="booking_underTitel">Traveller: {{this.$store.state.booking.data.trips_freeplace}}</p>
         <form class="booking_form">
             <div class="form-group row">
                 <label  class="col-sm-2 col-form-label">First name</label>
@@ -30,7 +31,7 @@
 
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Book now</button>
+                    <button type="submit" class="btn btn-primary"><i class="button_book">Book now:</i><i class="button_price"> total {{this.$store.state.booking.data.trip_price}}€ </i> </button>
                 </div>
             </div>
         </form>
@@ -61,5 +62,13 @@
 
 .booking_form button{
     margin-left: 15em;
+}
+
+.button_price{
+    font-size: 15px;
+}
+
+.button_book{
+    font-size: 20px;
 }
 </style>
