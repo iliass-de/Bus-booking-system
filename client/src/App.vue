@@ -2,7 +2,7 @@
   <div id="app">
     <navbar />
     <headerarea/>
-    <home />
+    <router-view />
     <foot />
   </div>
 </template>
