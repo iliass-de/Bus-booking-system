@@ -7,12 +7,14 @@
                     <div class="col colhead">From</div>
                     <div class="col colhead">To</div>
                     <div class="col colhead">Date</div>
+                    <div class="col colhead">Traveller</div>
                     <div class="col colhead"></div>
                     <div class="w-100"></div>
                     <div class="col"><input v-model="departure" type="text"  class="form-control" placeholder="Departue"/></div>
                     <div class="col"><input v-model="arrival" type="text"  class="form-control" placeholder="Destination"/></div>
-                    <div class="col"><input type="date" id="1" name="1" class="form-control"></div>
-                    <div class="col"><input v-on:click="set_data(departure,arrival,'2020-10-01')" type="button" value="Search" class="btn btn-primary" ></div>
+                    <div class="col"><input v-model="date" type="date" id="1" name="1" class="form-control"></div>
+                    <div class="col"><input v-model="traveller" type="number" value="0" min="0" max="50" step="1" class="form-control spinner"/></div>
+                    <div class="col"><input v-on:click="set_data(departure,arrival,date,traveller)" type="button" value="Search" class="btn btn-primary" ></div>
                 </div>
             </div>
         </div>
@@ -26,19 +28,24 @@
         name: "header",
         data: function() {
             return {
-                trips: '{}'
+                trips: '{}',
+                date: '',
+                departure:'',
+                arrival:'',
+                traveller:''
             };
         },
         computed: {
 
         },
         methods: {
-            set_data: function (departure, destination, date) {
+            set_data: function (departure, destination, date, traveller) {
                 const API_URL = 'http://localhost:3000/trips/departue/' + departure + '/destination/' + destination + '/' + date;
                 this.$axios.get(API_URL).then((response) => {
-                    this.trips = response.data;
                     this.$store.commit('set_data', response.data)
+                    this.$store.commit('set_traveller', traveller)
                     console.log(this.$store.state.trips);
+                    console.log(this.$store.state.traveller);
                     console.log(API_URL);
                 }).catch(error => {
                     console.log(error);
@@ -50,25 +57,25 @@
 
 <style scoped>
 
-    .headerarea {
-        background-image: url("../../public/img/jonathan-borba-T5jzpRTVF1U-unsplash.jpg");
-        background-attachment: fixed;
-        background-position: center;
-        filter: opacity(opacity: 50%);
-        background-repeat: no-repeat;
-        height: 400px;
-        position:relative;
-        text-align:center;
-    }
-    .headerarea p {
-        color:whitesmoke;
-        font-size: 50px;
-        text-align: center;
-        text-shadow: 5px 10px 8px black;
-        position:absolute;
-        top:50%;
-        left: 35%;
-    }
+.headerarea {
+    background-image: url("../../public/img/jonathan-borba-T5jzpRTVF1U-unsplash.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    filter: opacity(opacity: 50%);
+    background-repeat: no-repeat;
+    height: 400px;
+    position:relative;
+    text-align:center;
+}
+.headerarea p {
+    color:whitesmoke;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 5px 10px 8px black;
+    position:absolute;
+    top:50%;
+    left: 35%;
+}
 
 .bookingsection{
     padding: 1em;
@@ -91,5 +98,10 @@
 
 .btn-primary{
     width: 70%;
+}
+
+.spinner{
+    width: 40%;
+    margin-left: 3.5em;
 }
 </style>
