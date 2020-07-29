@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Booking </a>
+                    <a class="nav-link" href="/">Booking </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Destinations</a>
+                    <a class="nav-link" href="/destinations">Destinations</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Help</a>
