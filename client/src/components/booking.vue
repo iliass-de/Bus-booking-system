@@ -1,31 +1,36 @@
 <template>
     <div >
         <p class="booking_titel"> Your booking from {{this.$store.state.booking.data.departure}} to {{this.$store.state.booking.data.arrival}}</p>
-        <p class="booking_underTitel">{{this.$store.state.booking.data.trip_date}}, {{this.$store.state.booking.data.trip_startTime}} - {{this.$store.state.booking.data.trip_endTime}} </p>
-        <p class="booking_underTitel">Traveller: {{this.$store.state.booking.data.trips_freeplace}}</p>
-        <form class="booking_form">
+        <p class="booking_underTitel"><i class="fa fa-calendar" aria-hidden="true"></i> {{this.$store.state.booking.data.trip_date}}, {{this.$store.state.booking.data.trip_startTime}} - {{this.$store.state.booking.data.trip_endTime}} </p>
+        <p class="booking_underTitel"><i class="fa fa-male" aria-hidden="true"></i> Traveller: {{this.$store.state.booking.data.trips_freeplace}}</p>
+        <form class="booking_form" action="/" method ="GET">
             <div class="form-group row">
-                <label  class="col-sm-2 col-form-label">First name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="text" placeholder="First name">
+                    <input type="text" class="form-control" id="text" placeholder="First name" required autocomplete="off">
                 </div>
             </div>
             <div class="form-group row">
-                <label  class="col-sm-2 col-form-label">Last name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="text2" placeholder="Last name">
+                    <input type="text" class="form-control" id="text2" placeholder="Last name" required autocomplete="off">
                 </div>
             </div>
             <div class="form-group row">
-                <label  class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="text3" placeholder="Email">
+                    <input type="email" class="form-control" id="text3" placeholder="Email" required autocomplete="off">
                 </div>
             </div>
             <div class="form-group row">
-                <label  class="col-sm-2 col-form-label">Phone No. (Optional)</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="text4" placeholder="Phone No.">
+                    <input type="text" class="form-control" id="text4" placeholder="Phone No."  autocomplete="off">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                <select class="form-control" id="" >
+                    <option>Credit card</option>
+                    <option>Paypal</option>
+                    <option>Transfer</option>
+                </select>
                 </div>
             </div>
 
@@ -57,11 +62,11 @@
 .booking_form{
     width: 60%;
     text-align: center;
-    margin-left: 13em;
+    margin-left: 24em;
 }
 
 .booking_form button{
-    margin-left: 15em;
+    margin-bottom: 5em;
 }
 
 .button_price{

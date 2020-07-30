@@ -4,7 +4,6 @@
       <div v-if="this.$store.state.trips.length != 0">
         <h1>{{trips[0].departure}} → {{trips[0].arrival}}</h1>
         <h5> {{ getDate(trips[0].startTime) }} </h5>
-
         <table class="trips-table ">
           <thead>
           <tr>
@@ -43,7 +42,9 @@
       </div>
     </div>
     <div v-if="this.$store.state.trips.length == 0">
-      <h5>Unfortunately there are no trips on this route on the selected date. Please adjust the date of the trip to get results.!</h5>
+      <h5>Unfortunately there are no trips on this route on the selected date. Please adjust the date of the trip to get results.!<br>
+          Check the next trip on October 1st, 2020
+      </h5>
     </div>
 
   </div>

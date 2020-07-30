@@ -13,17 +13,20 @@
 <style scoped>
 
 .footer{
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
     text-align: center;
+    margin-top: 2em;
     color:white;
+    background-color: #007bff;
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
     right: 0px;
     margin-bottom: 0px;
-    background-color: deepskyblue;
-    padding: 0.5em;
+}
+
+.footer p {
+    margin-top: 1em;
 }
 
 </style>

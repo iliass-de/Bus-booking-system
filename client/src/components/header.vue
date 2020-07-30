@@ -10,10 +10,10 @@
                     <div class="col colhead">Traveller</div>
                     <div class="col colhead"></div>
                     <div class="w-100"></div>
-                    <div class="col"><input v-model="departure" type="text"  class="form-control" placeholder="Departue"  @keyup='capitalize' /></div>
-                    <div class="col"><input v-model="arrival" type="text"  class="form-control" placeholder="Destination" @keyup='capitalize'/></div>
+                    <div class="col"><input v-model="departure" type="text"  class="form-control booking-inputs" placeholder="Departue"  @keyup='capitalize'  /></div>
+                    <div class="col"><input v-model="arrival" type="text"  class="form-control booking-inputs" placeholder="Destination" @keyup='capitalize'  /></div>
                     <div class="col"><input v-model="date" type="date" id="1" name="1" class="form-control"></div>
-                    <div class="col"><input v-model="traveller" type="number" value="0" min="0" max="50" step="1" class="form-control spinner"/></div>
+                    <div class="col"><input v-model="traveller" type="number" value="0" min="0" max="50" step="1" class="form-control spinner booking-inputs" /></div>
                     <div class="col"><input v-on:click="set_data(departure,arrival,date,traveller)" type="button" value="Search" class="btn btn-primary" ></div>
                 </div>
             </div>
@@ -40,11 +40,18 @@
         },
         methods: {
             set_data: function (departure, destination, date, traveller) {
+                let textInput = document.getElementsByClassName('booking-inputs');
+                for (let i=0;i<textInput.length ;i++){
+                    if (textInput[i].value == ''){
+                        alert('You have to fill all the fields');
+                        return;
+                    }
+                }
                 const API_URL = 'http://localhost:3000/trips/departue/' + departure + '/destination/' + destination + '/' + date;
                 this.$axios.get(API_URL).then((response) => {
                     this.$store.commit('set_data', response.data)
                     this.$store.commit('set_traveller', traveller)
-                    console.log(API_URL);
+                    //console.log(API_URL);
                 }).catch(error => {
                     console.log(error);
                 });
@@ -63,7 +70,6 @@
     background-image: url("../../public/img/jonathan-borba-T5jzpRTVF1U-unsplash.jpg");
     background-attachment: fixed;
     background-position: center;
-    filter: opacity(opacity: 50%);
     background-repeat: no-repeat;
     height: 400px;
     position:relative;
@@ -77,6 +83,8 @@
     position:absolute;
     top:50%;
     left: 35%;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Prata', serif;
 }
 
 .bookingsection{
